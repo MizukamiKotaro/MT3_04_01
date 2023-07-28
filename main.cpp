@@ -89,7 +89,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
 		}
 
 		if (start) {
-			BehaviorCircleMovement(&ball.position, angularVelocity, &angle, radius, {});
+			BehaviorCircleMovement(&ball, angularVelocity, &angle, radius, {});
 		}
 
 		if (keys[DIK_R]) {
