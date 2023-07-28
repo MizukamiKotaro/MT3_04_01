@@ -60,11 +60,39 @@ void BehaviorCircleMovement(Ball* ball, const float& angularVelocity, float* ang
 	ball->position.y = point.y + std::sin(*angle) * radius;
 	ball->position.z = point.z;
 
+	//加速度でする場合、初速与えないとダメ
+	//半径を引数にしているがpointとの距離から作った方がよさそう
 	/*float n = -powf(angularVelocity, 2.0f) * radius;
-	ball->acceleration.x = n * std::cos(*angle) + point.x;
-	ball->acceleration.y = n * std::sin(*angle) + point.z;
+	ball->acceleration.x = n * std::cos(*angle);
+	ball->acceleration.y = n * std::sin(*angle);
 	ball->acceleration.z = 0.0f;
 
 	ball->velocity += ball->acceleration * deltaTime;
 	ball->position += ball->velocity * deltaTime;*/
+}
+
+void BehaviorCircleMovement(MyVector3* position, const float& angularVelocity, float* angle, const MyVector3& point) {
+
+	float deltaTime = 1.0f / 60.0f;
+	*angle += angularVelocity * deltaTime;
+
+	float radius = position->Length(point);
+
+	position->x = point.x + std::cos(*angle) * radius;
+	position->y = point.y + std::sin(*angle) * radius;
+	position->z = point.z;
+
+}
+
+void BehaviorCircleMovement(Ball* ball, const float& angularVelocity, float* angle, const MyVector3& point) {
+
+	float deltaTime = 1.0f / 60.0f;
+	*angle += angularVelocity * deltaTime;
+
+	float radius = ball->position.Length(point);
+
+	ball->position.x = point.x + std::cos(*angle) * radius;
+	ball->position.y = point.y + std::sin(*angle) * radius;
+	ball->position.z = point.z;
+
 }

@@ -42,7 +42,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
 
 	float angularVelocity = 3.14f;
 	float angle = 0.0f;
-	float radius = 0.8f;
+	//float radius = 0.8f;
 
 	bool start = false;
 
@@ -89,7 +89,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
 		}
 
 		if (start) {
-			BehaviorCircleMovement(&ball, angularVelocity, &angle, radius, {});
+			BehaviorCircleMovement(&ball, angularVelocity, &angle, {});
 		}
 
 		if (keys[DIK_R]) {

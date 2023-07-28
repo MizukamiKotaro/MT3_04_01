@@ -9,3 +9,7 @@ void BehaviorSpring(Spring* spring, Ball* ball, const MyVector3& gravity);
 void BehaviorCircleMovement(MyVector3* position, const float& angularVelocity, float* angle, const float& radius, const MyVector3& point);
 
 void BehaviorCircleMovement(Ball* ball, const float& angularVelocity, float* angle, const float& radius, const MyVector3& point);
+
+void BehaviorCircleMovement(MyVector3* position, const float& angularVelocity, float* angle, const MyVector3& point);
+
+void BehaviorCircleMovement(Ball* ball, const float& angularVelocity, float* angle, const MyVector3& point);
